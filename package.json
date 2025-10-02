@@ -1,16 +1,16 @@
 {
-  "name": "remark-extract-toc",
+  "name": "remark-assign-id-and-extract-toc",
   "version": "0.1.0-alpha.1",
-  "description": "remark plugin to generate toc",
+  "description": "remark plugin to assign ids to Headings and extract it as a JavaScript Array for ToC processing",
   "author": "osawa naotaka",
   "license": "MIT",
-  "homepage": "https://github.com/osawa-naotaka/remark-extract-toc",
+  "homepage": "https://github.com/osawa-naotaka/remark-assign-id-and-extract-toc",
   "bugs": {
-    "url": "https://github.com/osawa-naotaka/remark-extract-toc/issues"
+    "url": "https://github.com/osawa-naotaka/remark-assign-id-and-extract-toc/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/osawa-naotaka/remark-extract-toc.git"
+    "url": "git+https://github.com/osawa-naotaka/remark-assign-id-and-extract-toc.git"
   },
   "type": "module",
   "exports": {
@@ -19,19 +19,32 @@
     "require": "./dist/main.js"
   },
   "scripts": {
-    "check": "biome check --write ./src",
+    "check": "biome check --write ./src ./test",
     "dev": "concurrently \"tsc --watch\" \"tsx watch test/test.ts\"",
-    "build": "biome check --write ./src && tsc && tsup --config tsup.config.ts",
-    "clean": "rm -rf dist package.tgz"
+    "clean": "rm -rf dist package.tgz",
+    "build": "biome check --write ./src && tsc && rollup --config rollup.config.ts --configPlugin typescript"
   },
   "devDependencies": {
     "@anthropic-ai/claude-code": "^1.0.81",
     "@biomejs/biome": "2.2.5",
+    "@rollup/plugin-terser": "^0.4.4",
+    "@rollup/plugin-typescript": "^12.1.4",
     "concurrently": "^9.2.1",
+    "esbuild": "^0.25.10",
+    "rehype-stringify": "^10.0.1",
+    "remark-parse": "^11.0.0",
+    "remark-rehype": "^11.1.2",
+    "rollup": "^4.52.3",
+    "rollup-plugin-dts": "^6.2.3",
     "tsup": "^8.5.0",
     "tsx": "^4.20.6",
     "typescript": "^5.9.3",
-    "yarn": "1.22.22"
+    "unified": "^11.0.5"
   },
-  "packageManager": "yarn@4.9.1"
+  "packageManager": "yarn@4.9.1",
+  "dependencies": {
+    "mdast-util-to-string": "^4.0.0",
+    "unist-util-visit": "^5.0.0",
+    "vfile": "^6.0.3"
+  }
 }

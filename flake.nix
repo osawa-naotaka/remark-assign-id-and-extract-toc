@@ -13,6 +13,7 @@
     devShells.${system}.default = pkgs.mkShell {
       buildInputs = with pkgs; [
         yarn-berry
+        nodejs_22
         gh
         firefox
       ];
