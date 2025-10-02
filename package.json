@@ -1,0 +1,37 @@
+{
+  "name": "remark-extract-toc",
+  "version": "0.1.0-alpha.1",
+  "description": "remark plugin to generate toc",
+  "author": "osawa naotaka",
+  "license": "MIT",
+  "homepage": "https://github.com/osawa-naotaka/remark-extract-toc",
+  "bugs": {
+    "url": "https://github.com/osawa-naotaka/remark-extract-toc/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/osawa-naotaka/remark-extract-toc.git"
+  },
+  "type": "module",
+  "exports": {
+    "types": "./dist/main.d.ts",
+    "import": "./dist/main.js",
+    "require": "./dist/main.js"
+  },
+  "scripts": {
+    "check": "biome check --write ./src",
+    "dev": "concurrently \"tsc --watch\" \"tsx watch test/test.ts\"",
+    "build": "biome check --write ./src && tsc && tsup --config tsup.config.ts",
+    "clean": "rm -rf dist package.tgz"
+  },
+  "devDependencies": {
+    "@anthropic-ai/claude-code": "^1.0.81",
+    "@biomejs/biome": "2.2.5",
+    "concurrently": "^9.2.1",
+    "tsup": "^8.5.0",
+    "tsx": "^4.20.6",
+    "typescript": "^5.9.3",
+    "yarn": "1.22.22"
+  },
+  "packageManager": "yarn@4.9.1"
+}
