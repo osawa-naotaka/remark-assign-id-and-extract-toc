@@ -1,3 +1,34 @@
-import { hello } from "../src/main"
+import rehypeStringify from "rehype-stringify";
+import remarkParse from "remark-parse";
+import remarkRehype from "remark-rehype";
+import { unified } from "unified";
+import remarkExtractToc from "../src/main";
 
-hello();
+const markdown = `
+# h1
+
+hello
+
+## h2
+
+another hello
+
+## h2-2
+
+### h3
+
+## h2-3
+
+### h3-2
+
+### h3-3
+`;
+
+const proc = await unified()
+    .use(remarkParse)
+    .use(remarkExtractToc)
+    .use(remarkRehype)
+    .use(rehypeStringify)
+    .process(markdown);
+
+console.log(proc.data);
