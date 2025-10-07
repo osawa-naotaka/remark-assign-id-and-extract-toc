@@ -1,16 +1,16 @@
 {
-  "name": "remark-assign-id-and-extract-toc",
-  "version": "0.1.0-alpha.1",
+  "name": "remark-export-toc",
+  "version": "0.1.0-alpha.2",
   "description": "remark plugin to assign ids to Headings and extract it as a JavaScript Array for ToC processing",
   "author": "osawa naotaka",
   "license": "MIT",
-  "homepage": "https://github.com/osawa-naotaka/remark-assign-id-and-extract-toc",
+  "homepage": "https://github.com/osawa-naotaka/remark-export-toc",
   "bugs": {
-    "url": "https://github.com/osawa-naotaka/remark-assign-id-and-extract-toc/issues"
+    "url": "https://github.com/osawa-naotaka/remark-export-toc/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/osawa-naotaka/remark-assign-id-and-extract-toc.git"
+    "url": "git+https://github.com/osawa-naotaka/remark-export-toc.git"
   },
   "type": "module",
   "exports": {

@@ -12,6 +12,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Security: in case of vulnerabilities.
 
 ## [Unreleased]
+## [0.1.0-alpha.2] - 2025-10-08
+### Added
+- Add README.md.
+
+### Changed
+- change package name to remark-export-toc.
 
 ## [0.1.0-alpha.1] - 2025-10-03
 ### Added

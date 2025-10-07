@@ -9,12 +9,12 @@ export type ToC = {
     level: number;
 };
 
-export type RemarkExtractTocArgument = {
+export type RemarkExportTocArgument = {
     prefix: string;
     startLevel: number;
 };
 
-export default function remarkExtractToc(opt: RemarkExtractTocArgument = { prefix: "heading", startLevel: 2 }) {
+export default function remarkExportToc(opt: RemarkExportTocArgument = { prefix: "heading", startLevel: 2 }) {
     return (tree: Root, file: VFile) => {
         const toc: ToC[] = [];
         const counters = [0, 0, 0, 0, 0, 0];
