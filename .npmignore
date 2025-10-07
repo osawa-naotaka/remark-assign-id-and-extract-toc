@@ -5,6 +5,7 @@
 /node_modules
 /src
 /test
+.envrc
 .pnp*
 biome.json
 CLAUDE.md
