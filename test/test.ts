@@ -2,7 +2,7 @@ import rehypeStringify from "rehype-stringify";
 import remarkParse from "remark-parse";
 import remarkRehype from "remark-rehype";
 import { unified } from "unified";
-import remarkExtractToc from "../src/main";
+import remarkExportToc from "../src/main";
 
 const markdown = `
 # h1
@@ -26,7 +26,7 @@ another hello
 
 const proc = await unified()
     .use(remarkParse)
-    .use(remarkExtractToc)
+    .use(remarkExportToc)
     .use(remarkRehype)
     .use(rehypeStringify)
     .process(markdown);
